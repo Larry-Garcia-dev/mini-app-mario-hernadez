@@ -1,0 +1,12 @@
+/* Global Styles */
+page {
+  font-family: 'Times New Roman', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #474646;
+  line-height: 1.5;
+}
+
+/* Reset */
+view, text, image {
+  box-sizing: border-box;
+}

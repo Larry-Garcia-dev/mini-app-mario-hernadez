@@ -1,0 +1,25 @@
+<view class="page-container">
+  <!-- Header Component -->
+  <header 
+    brandName="{{brandName}}"
+    showToggle="{{false}}"
+    showMenuIcon="{{false}}"
+  />
+
+  <!-- Categories Grid -->
+  <view class="categories-grid">
+    <view 
+      class="category-column" 
+      a:for="{{categories}}" 
+      a:key="id"
+    >
+      <categoryoption
+        id="{{item.id}}"
+        title="{{item.title}}"
+        image="{{item.image}}"
+        route="{{item.route}}"
+        onTap="handleCategoryTap"
+      />
+    </view>
+  </view>
+</view>

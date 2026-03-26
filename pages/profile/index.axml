@@ -1,0 +1,68 @@
+<view class="page-container">
+  <!-- Header -->
+  <header 
+    brandName="{{brandName}}"
+    showToggle="{{false}}"
+    showBackArrow="{{true}}"
+  />
+
+  <!-- Profile Header -->
+  <view class="profile-header">
+    <view class="avatar-container">
+      <image class="avatar" src="{{user.avatar}}" mode="aspectFill" />
+    </view>
+    <text class="user-name">{{user.name}}</text>
+    <text class="user-email">{{user.email}}</text>
+  </view>
+
+  <!-- Menu Options -->
+  <view class="menu-section">
+    <view class="menu-item" onTap="goToOrders">
+      <text class="menu-item-text">Mis Pedidos</text>
+      <text class="menu-item-arrow">›</text>
+    </view>
+    
+    <view class="menu-item" onTap="goToAddresses">
+      <text class="menu-item-text">Mis Direcciones</text>
+      <text class="menu-item-arrow">›</text>
+    </view>
+    
+    <view class="menu-item" onTap="goToFavorites">
+      <text class="menu-item-text">Favoritos</text>
+      <text class="menu-item-arrow">›</text>
+    </view>
+    
+    <view class="menu-item" onTap="goToSettings">
+      <text class="menu-item-text">Configuración</text>
+      <text class="menu-item-arrow">›</text>
+    </view>
+    
+    <view class="menu-item" onTap="goToHelp">
+      <text class="menu-item-text">Ayuda</text>
+      <text class="menu-item-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- Logout Button -->
+  <view class="logout-section">
+    <view class="logout-button" onTap="handleLogout">
+      <text class="logout-button-text">Cerrar Sesión</text>
+    </view>
+  </view>
+
+  <!-- Tab Bar -->
+  <view class="tab-bar">
+    <view class="tab-item" onTap="goToHome">
+      <image class="tab-icon" src="/assets/icons/home.png" mode="aspectFit" />
+      <text class="tab-label">Inicio</text>
+    </view>
+    <view class="tab-item" onTap="goToCart">
+      <image class="tab-icon" src="/assets/icons/cart.png" mode="aspectFit" />
+      <text class="tab-label">Carrito</text>
+    </view>
+    <view class="tab-item active">
+      <image class="tab-icon" src="/assets/icons/profile.png" mode="aspectFit" />
+      <text class="tab-label">Perfil</text>
+    </view>
+  </view>
+</view>

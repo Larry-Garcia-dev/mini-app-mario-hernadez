@@ -1,0 +1,27 @@
+<view class="page-container">
+  <!-- Header Component -->
+  <header 
+    brandName="{{brandName}}"
+    showToggle="{{true}}"
+    isMenuOpen="{{isMenuOpen}}"
+    onToggle="handleToggleMenu"
+  />
+
+  <!-- Navigation Menu -->
+  <view class="menu-container {{isMenuOpen ? 'menu-open' : 'menu-closed'}}">
+    <view a:for="{{menuItems}}" a:key="id">
+      <menuitem
+        id="{{item.id}}"
+        label="{{item.label}}"
+        route="{{item.route}}"
+        onTap="handleMenuItemTap"
+      />
+    </view>
+  </view>
+
+  <!-- Hero Image -->
+  <heroimage
+    src="{{heroImageSrc}}"
+    mode="aspectFill"
+  />
+</view>

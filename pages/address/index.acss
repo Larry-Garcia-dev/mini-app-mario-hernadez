@@ -1,0 +1,72 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5ebe0;
+  padding-top: 80rpx;
+}
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  margin: 32rpx;
+  padding: 48rpx 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 32rpx;
+}
+
+.form-label {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #474646;
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.input-container {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  background-color: #ffffff;
+}
+
+.form-input {
+  width: 100%;
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #474646;
+  box-sizing: border-box;
+}
+
+.textarea-container {
+  min-height: 160rpx;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 120rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #474646;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.save-button {
+  background-color: #474646;
+  border-radius: 12rpx;
+  padding: 28rpx;
+  margin-top: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-button-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2rpx;
+}

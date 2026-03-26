@@ -1,0 +1,20 @@
+<view class="product-card" onTap="onProductTap">
+  <view class="product-image-wrapper">
+    <image 
+      class="product-image" 
+      src="{{image}}" 
+      mode="aspectFill"
+    />
+    <view class="product-badge" a:if="{{badge}}">
+      <text class="badge-text">{{badge}}</text>
+    </view>
+  </view>
+  <view class="product-info">
+    <text class="product-name">{{name}}</text>
+    <text class="product-description" a:if="{{description}}">{{description}}</text>
+    <view class="product-pricing">
+      <text class="product-price">{{currency}}{{price}}</text>
+      <text class="product-original-price" a:if="{{originalPrice}}">{{currency}}{{originalPrice}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header": "/components/header/index",
+    "menuitem": "/components/menuitem/index",
+    "heroimage": "/components/heroimage/index"
+  }
+}

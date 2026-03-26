@@ -1,0 +1,32 @@
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 32rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.menu-item:first-child {
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.menu-text {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #474646;
+  letter-spacing: 1rpx;
+}
+
+.arrow-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 36rpx;
+  color: #bebebe;
+  font-weight: 300;
+}

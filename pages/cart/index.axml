@@ -1,0 +1,62 @@
+<view class="page-container">
+  <!-- Header -->
+  <header 
+    brandName="{{brandName}}"
+    showToggle="{{false}}"
+    showBackArrow="{{true}}"
+  />
+
+  <!-- Address Section -->
+  <view class="address-section">
+    <view class="address-row">
+      <text class="address-text">{{address}}</text>
+      <text class="change-address" onTap="goToAddress">Cambiar dirección</text>
+    </view>
+  </view>
+
+  <!-- Order Summary -->
+  <view class="order-section">
+    <text class="section-title">Resumen de tu pedido</text>
+    
+    <view class="cart-items">
+      <view 
+        class="cart-item" 
+        a:for="{{cartItems}}" 
+        a:key="id"
+      >
+        <view class="item-image-container">
+          <image class="item-image" src="{{item.image}}" mode="aspectFit" />
+        </view>
+        <view class="item-details">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-price">$ {{item.price}}</text>
+        </view>
+        <text class="item-remove" onTap="removeItem" data-id="{{item.id}}">Eliminar</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Empty Space -->
+  <view class="spacer"></view>
+
+  <!-- Invoice Question -->
+  <view class="invoice-section">
+    <text class="invoice-question">¿Desea factura electrónica?</text>
+    <view class="invoice-buttons">
+      <view class="invoice-btn {{wantsInvoice === true ? 'active' : ''}}" onTap="setInvoice" data-value="{{true}}">
+        <text class="invoice-btn-text">Si</text>
+      </view>
+      <view class="invoice-btn {{wantsInvoice === false ? 'active' : ''}}" onTap="setInvoice" data-value="{{false}}">
+        <text class="invoice-btn-text">No</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Bottom Payment Bar -->
+  <view class="payment-bar">
+    <text class="total-price">$ {{totalPrice}}</text>
+    <view class="pay-button" onTap="handlePayment">
+      <text class="pay-button-text">Pagar</text>
+    </view>
+  </view>
+</view>

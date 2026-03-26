@@ -1,0 +1,11 @@
+<view class="hero-container" onTap="onHeroTap">
+  <image 
+    class="hero-image" 
+    src="{{src}}" 
+    mode="{{mode}}"
+  />
+  <view class="hero-overlay" a:if="{{showOverlay}}">
+    <text class="hero-title" a:if="{{title}}">{{title}}</text>
+    <text class="hero-subtitle" a:if="{{subtitle}}">{{subtitle}}</text>
+  </view>
+</view>

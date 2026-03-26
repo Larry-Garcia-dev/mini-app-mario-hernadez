@@ -1,0 +1,19 @@
+<view class="header" onTap="onHeaderTap">
+  <view class="header-left">
+    <view class="menu-icon" a:if="{{showMenuIcon}}">
+      <view class="menu-line"></view>
+      <view class="menu-line"></view>
+      <view class="menu-line"></view>
+    </view>
+  </view>
+  
+  <view class="header-center">
+    <text class="brand-name">{{brandName}}</text>
+  </view>
+  
+  <view class="header-right">
+    <view class="toggle-icon {{isMenuOpen ? 'open' : ''}}" a:if="{{showToggle}}">
+      <text class="toggle-arrow">›</text>
+    </view>
+  </view>
+</view>

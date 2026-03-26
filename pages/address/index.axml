@@ -1,0 +1,79 @@
+<view class="page-container">
+  <!-- Form Container -->
+  <view class="form-container">
+    <!-- Direccion -->
+    <view class="form-group">
+      <text class="form-label">Dirección</text>
+      <view class="input-container">
+        <input 
+          class="form-input" 
+          placeholder="Ingrese su dirección"
+          value="{{formData.direccion}}"
+          onInput="handleInput"
+          data-field="direccion"
+        />
+      </view>
+    </view>
+
+    <!-- Ciudad -->
+    <view class="form-group">
+      <text class="form-label">Ciudad</text>
+      <view class="input-container">
+        <input 
+          class="form-input" 
+          placeholder="Ingrese su ciudad"
+          value="{{formData.ciudad}}"
+          onInput="handleInput"
+          data-field="ciudad"
+        />
+      </view>
+    </view>
+
+    <!-- Apodo de direccion -->
+    <view class="form-group">
+      <text class="form-label">Apodo de dirección</text>
+      <view class="input-container">
+        <input 
+          class="form-input" 
+          placeholder="Ej: Casa, Trabajo"
+          value="{{formData.apodo}}"
+          onInput="handleInput"
+          data-field="apodo"
+        />
+      </view>
+    </view>
+
+    <!-- Detalles -->
+    <view class="form-group">
+      <text class="form-label">Detalles</text>
+      <view class="input-container">
+        <input 
+          class="form-input" 
+          placeholder="Apartamento, piso, etc."
+          value="{{formData.detalles}}"
+          onInput="handleInput"
+          data-field="detalles"
+        />
+      </view>
+    </view>
+
+    <!-- Comentarios -->
+    <view class="form-group">
+      <text class="form-label">Comentarios</text>
+      <view class="input-container textarea-container">
+        <textarea 
+          class="form-textarea" 
+          placeholder="Comentarios adicionales"
+          value="{{formData.comentarios}}"
+          onInput="handleInput"
+          data-field="comentarios"
+        />
+      </view>
+    </view>
+
+    <!-- Save Button -->
+    <view class="save-button" onTap="handleSave">
+      <text class="save-button-text">GUARDAR</text>
+    </view>
+  </view>
+</view>

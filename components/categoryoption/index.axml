@@ -1,0 +1,10 @@
+<view class="category-option" onTap="onCategoryTap">
+  <image 
+    class="category-bg-image" 
+    src="{{image}}" 
+    mode="aspectFill"
+  />
+  <view class="category-overlay">
+    <text class="category-title">{{title}}</text>
+  </view>
+</view>

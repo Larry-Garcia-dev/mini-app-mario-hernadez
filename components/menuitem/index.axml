@@ -1,0 +1,6 @@
+<view class="menu-item" onTap="onItemTap">
+  <text class="menu-text">{{label}}</text>
+  <view class="arrow-icon">
+    <text class="arrow">›</text>
+  </view>
+</view>

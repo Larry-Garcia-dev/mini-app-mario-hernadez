@@ -1,0 +1,65 @@
+<view class="page-container">
+  <!-- Header Component -->
+  <header 
+    brandName="{{brandName}}"
+    showToggle="{{false}}"
+    showBackArrow="{{true}}"
+  />
+
+  <!-- Search Bar -->
+  <view class="search-container">
+    <view class="search-bar">
+      <image class="search-icon" src="/assets/icons/search.png" mode="aspectFit" />
+      <input 
+        class="search-input" 
+        placeholder="Buscar productos..." 
+        value="{{searchQuery}}"
+        onInput="handleSearchInput"
+      />
+    </view>
+    <view class="filter-button" onTap="handleFilterTap">
+      <image class="filter-icon" src="/assets/icons/filter.png" mode="aspectFit" />
+    </view>
+  </view>
+
+  <!-- Products Grid -->
+  <scroll-view class="products-scroll" scroll-y="{{true}}">
+    <view class="products-grid">
+      <view 
+        class="product-column" 
+        a:for="{{filteredProducts}}" 
+        a:key="id"
+      >
+        <view class="product-card" onTap="handleProductTap" data-product="{{item}}">
+          <view class="product-image-container">
+            <image 
+              class="product-image" 
+              src="{{item.image}}" 
+              mode="aspectFit"
+            />
+          </view>
+          <view class="product-info">
+            <text class="product-name">{{item.name}}</text>
+            <text class="product-price">{{item.currency}}{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- Tab Bar -->
+  <view class="tab-bar">
+    <view class="tab-item active" onTap="goToHome">
+      <image class="tab-icon" src="/assets/icons/home.png" mode="aspectFit" />
+      <text class="tab-label">Inicio</text>
+    </view>
+    <view class="tab-item" onTap="goToCart">
+      <image class="tab-icon" src="/assets/icons/cart.png" mode="aspectFit" />
+      <text class="tab-label">Carrito</text>
+    </view>
+    <view class="tab-item" onTap="goToProfile">
+      <image class="tab-icon" src="/assets/icons/profile.png" mode="aspectFit" />
+      <text class="tab-label">Perfil</text>
+    </view>
+  </view>
+</view>
