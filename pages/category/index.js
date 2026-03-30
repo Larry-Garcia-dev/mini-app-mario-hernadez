@@ -3,16 +3,40 @@ Page({
     brandName: 'MARIO HERNÁNDEZ',
     pageTitle: 'Categorías',
     categoryType: '',
-    categories: []
+    categories: [],
+    visibleItems: [],
+    exitingItem: -1,
+    isNavigating: false
   },
 
   onLoad(query) {
     const type = query.type || 'mujer';
+    const categories = this.getCategoriesByType(type);
+    
+    // Inicializar todos los items como invisibles
+    const visibleItems = categories.map(() => false);
+    
     this.setData({
       categoryType: type,
       pageTitle: this.formatTitle(type),
-      categories: this.getCategoriesByType(type)
+      categories: categories,
+      visibleItems: visibleItems
     });
+
+    // Mostrar cada item con delay escalonado
+    this.animateItems(categories.length);
+  },
+
+  animateItems(totalItems) {
+    const delay = 150; // ms entre cada item
+    
+    for (let i = 0; i < totalItems; i++) {
+      setTimeout(() => {
+        const visibleItems = this.data.visibleItems.slice();
+        visibleItems[i] = true;
+        this.setData({ visibleItems: visibleItems });
+      }, delay * i);
+    }
   },
 
   formatTitle(type) {
@@ -155,7 +179,38 @@ Page({
     return allCategories[type] || allCategories.mujer;
   },
 
-  handleCategoryTap(category) {
-    console.log('Category selected:', category.title);
+  handleCategoryTap(e) {
+    // Evitar multiples clicks durante la animacion
+    if (this.data.isNavigating) return;
+
+    const index = e.currentTarget.dataset.index;
+    const route = e.currentTarget.dataset.route;
+    const title = e.currentTarget.dataset.title;
+
+    // Marcar que estamos navegando y cual item esta saliendo
+    this.setData({
+      isNavigating: true,
+      exitingItem: index
+    });
+
+    // Esperar a que termine la animacion de fade-out (400ms) antes de navegar
+    setTimeout(() => {
+      my.navigateTo({
+        url: route,
+        success: () => {
+          // Resetear el estado despues de navegar
+          this.setData({
+            exitingItem: -1,
+            isNavigating: false
+          });
+        },
+        fail: () => {
+          this.setData({
+            exitingItem: -1,
+            isNavigating: false
+          });
+        }
+      });
+    }, 400);
   }
 });

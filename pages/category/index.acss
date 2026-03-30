@@ -14,4 +14,24 @@
 .category-column {
   width: 50%;
   box-sizing: border-box;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Estado inicial - invisible */
+.fade-out {
+  opacity: 0;
+  transform: translateY(30rpx);
+}
+
+/* Estado visible - fade in con movimiento */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estado de salida - fade out al hacer click */
+.fade-exit {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
 }

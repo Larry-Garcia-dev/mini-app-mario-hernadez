@@ -9,16 +9,19 @@
   <!-- Categories Grid -->
   <view class="categories-grid">
     <view 
-      class="category-column" 
+      class="category-column {{exitingItem === index ? 'fade-exit' : (visibleItems[index] ? 'fade-in' : 'fade-out')}}" 
       a:for="{{categories}}" 
       a:key="id"
+      onTap="handleCategoryTap"
+      data-index="{{index}}"
+      data-route="{{item.route}}"
+      data-title="{{item.title}}"
     >
       <categoryoption
         id="{{item.id}}"
         title="{{item.title}}"
         image="{{item.image}}"
         route="{{item.route}}"
-        onTap="handleCategoryTap"
       />
     </view>
   </view>
