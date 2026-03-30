@@ -20,8 +20,8 @@
   flex-direction: row;
   align-items: center;
   background-color: #ffffff;
-  border-radius: 8rpx;
-  padding: 16rpx 24rpx;
+  border-radius: 20rpx;
+  padding: 5rpx 7rpx;
   border: 1rpx solid #e0e0e0;
 }
 
@@ -41,9 +41,6 @@
 .filter-button {
   margin-left: 16rpx;
   padding: 16rpx;
-  background-color: #ffffff;
-  border-radius: 8rpx;
-  border: 1rpx solid #e0e0e0;
 }
 
 .filter-icon {

@@ -16,9 +16,9 @@
         value="{{searchQuery}}"
         onInput="handleSearchInput"
       />
-    </view>
-    <view class="filter-button" onTap="handleFilterTap">
-      <image class="filter-icon" src="/assets/icons/filter.png" mode="aspectFit" />
+      <view class="filter-button" onTap="handleFilterTap">
+        <image class="filter-icon" src="/assets/icons/filter.png" mode="aspectFit" />
+      </view>
     </view>
   </view>
 
