@@ -1,4 +1,16 @@
 <view class="page-container">
+  <!-- Toast de confirmacion -->
+  <view class="toast-overlay {{showToast ? 'show' : 'hide'}}">
+    <view class="toast-container">
+      <view class="toast-icon">
+        <view class="cart-icon-body"></view>
+        <view class="cart-icon-wheel left"></view>
+        <view class="cart-icon-wheel right"></view>
+        <view class="cart-icon-handle"></view>
+      </view>
+      <text class="toast-text">Item agregado al carrito</text>
+    </view>
+  </view>
   <!-- Header Component -->
   <header 
     brandName="{{brandName}}"
@@ -24,55 +36,61 @@
 
   <!-- Product Info -->
   <view class="product-info">
-    <view class="product-header">
-      <text class="product-name">{{product.name}}</text>
-      <text class="product-reference">Ref: {{product.reference}}</text>
-    </view>
+    <!-- Product Name -->
+    <text class="product-name">{{product.name}}</text>
+    
+    <!-- Product Price -->
+    <text class="product-price">{{product.currency}}{{product.price}}</text>
 
-    <view class="product-pricing">
-      <text class="product-price">{{product.currency}}{{product.price}}</text>
-      <text class="product-original-price" a:if="{{product.originalPrice}}">
-        {{product.currency}}{{product.originalPrice}}
-      </text>
-    </view>
-
-    <view class="product-description">
-      <text class="description-title">Descripcion</text>
-      <text class="description-text">{{product.description}}</text>
-    </view>
-
-    <!-- Color Options -->
-    <view class="product-options" a:if="{{product.colors.length > 0}}">
-      <text class="options-title">Color</text>
-      <view class="color-options">
-        <view 
-          class="color-option {{selectedColor === item.id ? 'selected' : ''}}"
-          a:for="{{product.colors}}"
-          a:key="id"
-          data-color="{{item}}"
-          onTap="selectColor"
-        >
-          <view class="color-circle" style="background-color: {{item.hex}}"></view>
-          <text class="color-name">{{item.name}}</text>
-        </view>
+    <!-- Ver Detalles del producto - Collapsible -->
+    <view class="details-toggle" onTap="toggleDetails">
+      <view class="details-toggle-icon">
+        <view class="icon-line"></view>
+        <view class="icon-line"></view>
+        <view class="icon-line"></view>
       </view>
+      <text class="details-toggle-text">{{showDetails ? 'Ver menos' : 'Ver Detalles del producto'}}</text>
     </view>
 
-    <!-- Product Details -->
-    <view class="product-details">
-      <text class="details-title">Detalles</text>
+    <!-- Product Description - Collapsible Content -->
+    <view class="product-description {{showDetails ? 'show' : 'hide'}}">
+      <text class="description-text">{{product.description}}</text>
       <view class="details-list">
         <view class="detail-item" a:for="{{product.details}}" a:key="index">
           <text class="detail-text">- {{item}}</text>
         </view>
       </view>
     </view>
+
+    <!-- Personalizar Section -->
+    <view class="personalize-section">
+      <text class="personalize-title">Personalizar</text>
+      
+      <!-- Color Options -->
+      <view class="color-section" a:if="{{product.colors.length > 0}}">
+        <text class="color-label">Escoge el color</text>
+        <view class="color-options">
+          <view 
+            class="color-option {{selectedColor === item.id ? 'selected' : ''}}"
+            a:for="{{product.colors}}"
+            a:key="id"
+            data-color="{{item}}"
+            onTap="selectColor"
+          >
+            <view class="color-circle" style="background-color: {{item.hex}}"></view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 
-  <!-- Add to Cart Button -->
+  <!-- Bottom Actions -->
   <view class="bottom-actions">
+    <view class="pay-button" onTap="goToPay">
+      <text class="pay-button-text">Pagar</text>
+    </view>
     <view class="add-to-cart-button" onTap="addToCart">
-      <text class="button-text">Agregar al Carrito</text>
+      <text class="cart-button-text">Añadir al carrito</text>
     </view>
   </view>
 </view>

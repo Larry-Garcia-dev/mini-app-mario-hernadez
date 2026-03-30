@@ -6,11 +6,13 @@
     "pages/productdetail/index",
     "pages/cart/index",
     "pages/profile/index",
-    "pages/address/index"
+    "pages/address/index",
+    "pages/checkout/index"
   ],
   "window": {
-    "defaultTitle": "Mario Hernandez",
+    "defaultTitle": "",
     "titleBarColor": "#ffffff",
     "backgroundColor": "#f5ebe0"
+  
   }
 }

@@ -1,0 +1,56 @@
+<view class="page-container">
+  <!-- Header -->
+  <header 
+    isMenuOpen="{{false}}" 
+    onToggle="handleToggle"
+  />
+  <!-- Success Icon -->
+  <view class="success-section">
+    <view class="success-icon">
+      <view class="check-circle">
+        <view class="check-mark"></view>
+      </view>
+    </view>
+    <text class="success-text">¡Listo!</text>
+  </view>
+  <!-- Order Details Card -->
+  <view class="order-card">
+    <!-- Date Header -->
+    <view class="date-header">
+      <text class="date-text">{{orderDate}}</text>
+    </view>
+    <!-- Details Section -->
+    <view class="details-section">
+      <text class="details-title">Detalles de tu compra</text>
+      <view class="details-divider"></view>
+      <view class="details-list">
+        <view class="detail-item">
+          <view class="bullet"></view>
+          <text class="detail-label">Pedido:</text>
+          <text class="detail-value">{{orderName}}</text>
+        </view>
+        <view class="detail-item">
+          <view class="bullet"></view>
+          <text class="detail-label">Fecha:</text>
+          <text class="detail-value">{{orderDateShort}}</text>
+        </view>
+        <view class="detail-item">
+          <view class="bullet"></view>
+          <text class="detail-label">Dirección:</text>
+          <text class="detail-value">{{orderAddress}}</text>
+        </view>
+        <view class="detail-item">
+          <view class="bullet"></view>
+          <text class="detail-label">Hora:</text>
+          <text class="detail-value">{{orderTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- Finish Button -->
+  <view class="bottom-bar">
+    <view class="finish-button" onTap="finishOrder">
+      <text class="finish-button-text">Finalizar</text>
+    </view>
+  </view>
+</view>

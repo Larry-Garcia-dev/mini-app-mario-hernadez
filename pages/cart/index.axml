@@ -18,7 +18,21 @@
   <view class="order-section">
     <text class="section-title">Resumen de tu pedido</text>
     
-    <view class="cart-items">
+    <!-- Empty Cart Message -->
+    <view class="empty-cart" a:if="{{cartItems.length < 1}}">
+      <view class="empty-cart-icon">
+        <view class="empty-icon-body"></view>
+        <view class="empty-icon-wheel left"></view>
+        <view class="empty-icon-wheel right"></view>
+      </view>
+      <text class="empty-cart-text">No tienes productos en el carrito</text>
+      <view class="empty-cart-button" onTap="goToProducts">
+        <text class="empty-cart-button-text">Ver productos</text>
+      </view>
+    </view>
+    
+    <!-- Cart Items -->
+    <view class="cart-items" a:if="{{cartItems.length >= 1}}">
       <view 
         class="cart-item" 
         a:for="{{cartItems}}" 
@@ -49,6 +63,18 @@
       <view class="invoice-btn {{wantsInvoice === false ? 'active' : ''}}" onTap="setInvoice" data-value="{{false}}">
         <text class="invoice-btn-text">No</text>
       </view>
+    </view>
+    
+    <!-- NIT Input - Solo visible si wantsInvoice es true -->
+    <view class="nit-container {{wantsInvoice === true ? 'show' : 'hide'}}">
+      <text class="nit-label">NIT o Documento de identidad</text>
+      <input 
+        class="nit-input" 
+        type="text" 
+        placeholder="Ingrese NIT o documento"
+        value="{{nitValue}}"
+        onInput="onNitInput"
+      />
     </view>
   </view>
 

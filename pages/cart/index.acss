@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f5ebe0;
+  background-color: #F8F7F6;
 }
 
 /* Address Section */
 .address-section {
-  background-color: #ffffff;
+  background-color: #F8F7F6;
   padding: 24rpx 32rpx;
   margin-top: 16rpx;
 }
@@ -32,7 +32,7 @@
 
 /* Order Section */
 .order-section {
-  background-color: #f5ebe0;
+  background-color: #F8F7F6;
   padding: 24rpx 32rpx;
 }
 
@@ -41,6 +41,72 @@
   font-weight: 600;
   color: #474646;
   margin-bottom: 24rpx;
+}
+
+/* Empty Cart */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 64rpx 32rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.empty-cart-icon {
+  position: relative;
+  width: 80rpx;
+  height: 70rpx;
+  margin-bottom: 24rpx;
+}
+
+.empty-icon-body {
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  width: 48rpx;
+  height: 36rpx;
+  border: 4rpx solid #c0c0c0;
+  border-top: none;
+  border-radius: 0 0 8rpx 8rpx;
+}
+
+.empty-icon-wheel {
+  position: absolute;
+  bottom: 0;
+  width: 14rpx;
+  height: 14rpx;
+  background-color: #c0c0c0;
+  border-radius: 50%;
+}
+
+.empty-icon-wheel.left {
+  left: 20rpx;
+}
+
+.empty-icon-wheel.right {
+  right: 20rpx;
+}
+
+.empty-cart-text {
+  font-size: 28rpx;
+  color: #888888;
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+
+.empty-cart-button {
+  background-color: #474646;
+  border-radius: 24rpx;
+  padding: 20rpx 48rpx;
+}
+
+.empty-cart-button-text {
+  font-size: 26rpx;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .cart-items {
@@ -67,15 +133,13 @@
   height: 120rpx;
   background-color: #f5f5f5;
   border-radius: 12rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
   margin-right: 24rpx;
 }
 
 .item-image {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 .item-details {
@@ -114,7 +178,7 @@
   flex-direction: column;
   align-items: center;
   padding: 48rpx 32rpx;
-  background-color: #f5ebe0;
+  background-color: #F8F7F6;
 }
 
 .invoice-question {
@@ -149,6 +213,45 @@
   color: #ffffff;
 }
 
+/* NIT Input Container */
+.nit-container {
+  width: 100%;
+  margin-top: 32rpx;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  overflow: visible;
+}
+
+.nit-container.show {
+  opacity: 1;
+  max-height: 300rpx;
+}
+
+.nit-container.hide {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.nit-label {
+  font-size: 28rpx;
+  color: #474646;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.nit-input {
+  width: 100%;
+  height: 88rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid #c0c0c0;
+  border-radius: 12rpx;
+  background-color: #ffffff;
+  font-size: 30rpx;
+  color: #474646;
+  box-sizing: border-box;
+  line-height: 88rpx;
+}
+
 /* Payment Bar */
 .payment-bar {
   display: flex;
@@ -156,7 +259,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 32rpx;
-  background-color: #e8ddd4;
+  background-color: #FFFFFF;
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  border: gainsboro 1px solid;
 }
 
 .total-price {
@@ -166,7 +271,7 @@
 }
 
 .pay-button {
-  background-color: #c4b5a6;
+  background-color: black;
   border-radius: 32rpx;
   padding: 24rpx 64rpx;
 }

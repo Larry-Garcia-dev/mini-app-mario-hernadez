@@ -21,7 +21,7 @@ Page({
       {
         id: 1,
         name: 'Morral Enzo Ébano Lt Palenque',
-        image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400',
+        image: 'https://previews.123rf.com/images/amitspro/amitspro1706/amitspro170600016/80099376-abstract-flower-mandala-decorative-pattern-blue-background-square-image-illusion-image-pattern.jpg',
         price: '1.350.000',
         currency: '$'
       },

@@ -3,6 +3,7 @@ Page({
     brandName: 'MARIO HERNÁNDEZ',
     address: 'Calle 21 #3-31',
     wantsInvoice: null,
+    nitValue: '',
     cartItems: [
       {
         id: 1,
@@ -35,6 +36,12 @@ Page({
     });
   },
 
+  goToProducts() {
+    my.navigateTo({
+      url: '/pages/products/index'
+    });
+  },
+
   removeItem(e) {
     const itemId = e.currentTarget.dataset.id;
     const updatedItems = this.data.cartItems.filter(item => item.id !== itemId);
@@ -51,6 +58,19 @@ Page({
     this.setData({
       wantsInvoice: value
     });
+    
+    // Limpiar NIT si selecciona No
+    if (value === false) {
+      this.setData({
+        nitValue: ''
+      });
+    }
+  },
+
+  onNitInput(e) {
+    this.setData({
+      nitValue: e.detail.value
+    });
   },
 
   handlePayment() {
@@ -62,9 +82,12 @@ Page({
       return;
     }
 
-    my.showToast({
-      content: 'Procesando pago...',
-      type: 'success'
+    // Obtener nombre del primer producto para mostrar en checkout
+    const orderName = this.data.cartItems.map(item => item.name).join(', ');
+    const address = this.data.address;
+
+    my.navigateTo({
+      url: `/pages/checkout/index?orderName=${encodeURIComponent(orderName)}&address=${encodeURIComponent(address)}`
     });
   }
 });
