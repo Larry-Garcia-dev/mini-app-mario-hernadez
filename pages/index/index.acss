@@ -28,19 +28,22 @@
   flex-direction: column;
 }
 
-/* Menu container with scroll */
+/* Menu container with slide-up animation */
+/* Altura para 4 items exactos: (padding 56rpx + line-height ~32rpx + borde 1rpx) * 4 = ~356rpx */
 .menu-container {
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  height: 32vh;
   background-color: rgba(255, 255, 255, 0.95);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
-.menu-open {
-  max-height: 500rpx;
-  opacity: 1;
-}
-
-.menu-closed {
-  max-height: 0;
+/* Initial state - menu at bottom */
+.menu-initial {
+  transform: translateY(100vh);
   opacity: 0;
+}
+
+/* Animated state - menu slides up to position */
+.menu-slide-up {
+  transform: translateY(0);
+  opacity: 1;
 }

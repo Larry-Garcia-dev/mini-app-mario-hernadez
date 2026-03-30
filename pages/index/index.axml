@@ -5,25 +5,27 @@
   </view>
 
   <!-- Content Overlay -->
-  <view class="content-overlay">
-    <!-- Header Component -->
+  <view class="content-overlay {{menuAnimated ? 'animated' : ''}}">
+    <!-- Header Component - Sin toggle en index -->
     <header 
       brandName="{{brandName}}"
-      showToggle="{{true}}"
-      isMenuOpen="{{isMenuOpen}}"
-      onToggle="handleToggleMenu"
+      showToggle="{{false}}"
+      showMenuIcon="{{false}}"
     />
 
-    <!-- Navigation Menu with scroll -->
+    <!-- Navigation Menu with slide-up animation -->
     <scroll-view 
-      class="menu-container {{isMenuOpen ? 'menu-open' : 'menu-closed'}}"
+      class="menu-container {{menuAnimated ? 'menu-slide-up' : 'menu-initial'}}"
       scroll-y="{{true}}"
+      
+
     >
       <view a:for="{{menuItems}}" a:key="id">
         <menuitem
           id="{{item.id}}"
           label="{{item.label}}"
           route="{{item.route}}"
+          showArrow="{{true}}"
           onTap="handleMenuItemTap"
         />
       </view>
