@@ -1,27 +1,32 @@
 <view class="page-container">
-  <!-- Header Component -->
-  <header 
-    brandName="{{brandName}}"
-    showToggle="{{true}}"
-    isMenuOpen="{{isMenuOpen}}"
-    onToggle="handleToggleMenu"
-  />
-
-  <!-- Navigation Menu -->
-  <view class="menu-container {{isMenuOpen ? 'menu-open' : 'menu-closed'}}">
-    <view a:for="{{menuItems}}" a:key="id">
-      <menuitem
-        id="{{item.id}}"
-        label="{{item.label}}"
-        route="{{item.route}}"
-        onTap="handleMenuItemTap"
-      />
-    </view>
+  <!-- Background Hero Image - Fixed -->
+  <view class="hero-background">
+    <image class="hero-bg-image" src="{{heroImageSrc}}" mode="aspectFill" />
   </view>
 
-  <!-- Hero Image -->
-  <heroimage
-    src="{{heroImageSrc}}"
-    mode="aspectFill"
-  />
+  <!-- Content Overlay -->
+  <view class="content-overlay">
+    <!-- Header Component -->
+    <header 
+      brandName="{{brandName}}"
+      showToggle="{{true}}"
+      isMenuOpen="{{isMenuOpen}}"
+      onToggle="handleToggleMenu"
+    />
+
+    <!-- Navigation Menu with scroll -->
+    <scroll-view 
+      class="menu-container {{isMenuOpen ? 'menu-open' : 'menu-closed'}}"
+      scroll-y="{{true}}"
+    >
+      <view a:for="{{menuItems}}" a:key="id">
+        <menuitem
+          id="{{item.id}}"
+          label="{{item.label}}"
+          route="{{item.route}}"
+          onTap="handleMenuItemTap"
+        />
+      </view>
+    </scroll-view>
+  </view>
 </view>
