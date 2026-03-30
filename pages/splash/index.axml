@@ -1,0 +1,30 @@
+<view class="page-container">
+  <view class="logo-container">
+    <!-- Stage 1: Circle with triangular cuts -->
+    <image 
+      class="logo-stage {{loadingStage >= 1 ? 'visible' : 'hidden'}}"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-QYydTwQBArdN6a8UFO1XiCEHvx6CD1.png"
+      mode="aspectFit"
+    />
+    
+    <!-- Stage 2: Circle with half M -->
+    <image 
+      class="logo-stage {{loadingStage >= 2 ? 'visible' : 'hidden'}}"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eZd2zI5ju3rDVegmNfB1ieAd4ItyjP.png"
+      mode="aspectFit"
+    />
+    
+    <!-- Stage 3: Complete logo -->
+    <image 
+      class="logo-stage {{loadingStage >= 3 ? 'visible' : 'hidden'}}"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5UrJTvCFtwYAUUjYYMrotmMtCz6ILU.png"
+      mode="aspectFit"
+    />
+  </view>
+  
+  <!-- Loading text -->
+  <view class="loading-text-container {{loadingStage >= 1 ? 'visible' : 'hidden'}}">
+    <text class="loading-text">Cargando</text>
+    <text class="loading-dots">{{loadingDots}}</text>
+  </view>
+</view>

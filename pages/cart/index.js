@@ -86,8 +86,12 @@ Page({
     const orderName = this.data.cartItems.map(item => item.name).join(', ');
     const address = this.data.address;
 
+    // Construir la URL de checkout con los parametros
+    const checkoutUrl = `/pages/checkout/index?orderName=${encodeURIComponent(orderName)}&address=${encodeURIComponent(address)}`;
+
+    // Navegar al splash con la redireccion al checkout
     my.navigateTo({
-      url: `/pages/checkout/index?orderName=${encodeURIComponent(orderName)}&address=${encodeURIComponent(address)}`
+      url: `/pages/splash/index?redirect=${encodeURIComponent(checkoutUrl)}`
     });
   }
 });

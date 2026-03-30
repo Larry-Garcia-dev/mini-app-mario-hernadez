@@ -7,7 +7,8 @@
     "pages/cart/index",
     "pages/profile/index",
     "pages/address/index",
-    "pages/checkout/index"
+    "pages/checkout/index",
+    "pages/splash/index"
   ],
   "window": {
     "defaultTitle": "",
